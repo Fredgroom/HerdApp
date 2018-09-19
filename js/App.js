@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
+import RootStack from './navigation/RootStackNavigator';
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Herd!</Text>
-      </View>
+      <RootStack />
     );
   }
 }
