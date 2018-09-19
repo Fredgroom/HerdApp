@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import RootStack from './navigation/RootStackNavigator';
 export default class App extends Component {
   render() {
-    return (
-      <RootStack />
-    );
+    return <RootStack />;
   }
 }
 
