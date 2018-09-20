@@ -1,23 +1,36 @@
 import React from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { colours } from '../config/styles';
 import {
   createStackNavigator,
   createBottomTabNavigator,
 } from 'react-navigation';
-import { colours } from '../config/styles';
+import { AllEventsContainer } from '../screens/Feed/AllEvents';
+import { AllPromosContainer } from '../screens/Feed/AllPromos';
+import { AllVenuesContainer } from '../screens/Feed/AllVenues';
+import { EventContainer } from '../screens/Feed/Event';
 import { FeedContainer } from '../screens/Feed';
-import { ScanIdContainer } from '../screens/ScanId';
-import { SafetyContainer } from '../screens/Safety';
 import { HerdContainer } from '../screens/Herd';
 import { LogOutContainer } from '../screens/LogOut';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import { PromoContainer } from '../screens/Feed/Promo';
+import { SafetyContainer } from '../screens/Safety';
+import { ScanIdContainer } from '../screens/ScanId';
+import { VenueContainer } from '../screens/Feed/Venue';
 
 const FeedStack = createStackNavigator(
   {
     Feed: FeedContainer,
+    Promo: PromoContainer,
+    Event: EventContainer,
+    AllEvents: AllEventsContainer,
+    AllPromos: AllPromosContainer,
+    AllVenues: AllVenuesContainer,
+    Venue: VenueContainer,
   },
   {
     navigationOptions: ({ navigation }) => ({
       title: navigation.state.routeName,
+      initialRouteName: 'Feed',
     }),
   }
 );

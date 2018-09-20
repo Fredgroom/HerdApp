@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Event from './Event';
+import { withNavigation } from 'react-navigation';
 
-export default class EventContainer extends Component {
+class EventContainer extends Component {
   render() {
     return <Event />;
   }
 }
+
+export default withNavigation(EventContainer);

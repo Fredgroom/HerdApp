@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const Event = () => {
+const Event = ({ navigation }) => {
   return (
     <View>
-      <Text>This is the Event Page</Text>
+      <Button
+        onPress={() => navigation.navigate('AllEvents')}
+        title="link to AllEvents Page"
+      />
     </View>
   );
 };
 
-export default Event;
+export default withNavigation(Event);

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Venue from './Venue';
+import { withNavigation } from 'react-navigation';
 
-export default class VenueContainer extends Component {
+class VenueContainer extends Component {
   render() {
     return <Venue />;
   }
 }
+
+export default withNavigation(VenueContainer);

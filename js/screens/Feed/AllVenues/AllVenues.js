@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const AllVenues = () => {
+const AllVenues = ({ navigation }) => {
   return (
     <View>
-      <Text>This is the AllVenues Page</Text>
+      <Button
+        onPress={() => navigation.navigate('Venue')}
+        title="link to Venue Page"
+      />
     </View>
   );
 };
 
-export default AllVenues;
+export default withNavigation(AllVenues);

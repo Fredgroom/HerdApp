@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const AllPromos = () => {
+const AllPromos = ({ navigation }) => {
   return (
     <View>
-      <Text>This is the AllPromos Page</Text>
+      <Button
+        onPress={() => navigation.navigate('Promo')}
+        title="link to Promo Page"
+      />
     </View>
   );
 };
 
-export default AllPromos;
+export default withNavigation(AllPromos);

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import AllEvents from './AllEvents';
+import { withNavigation } from 'react-navigation';
 
-export default class AllEventsContainer extends Component {
+class AllEventsContainer extends Component {
   render() {
     return <AllEvents />;
   }
 }
+
+export default withNavigation(AllEventsContainer);

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import AllVenues from './AllVenues';
+import { withNavigation } from 'react-navigation';
 
-export default class AllVenuesContainer extends Component {
+class AllVenuesContainer extends Component {
   render() {
     return <AllVenues />;
   }
 }
+
+export default withNavigation(AllVenuesContainer);
