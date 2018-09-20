@@ -1,12 +1,18 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const AlertVenueStaff = () => {
+const AlertVenueStaff = ({ navigation }) => {
   return (
     <View>
-      <Text>This is the AlertVenueStaff Page</Text>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('VenueChat')}
+          title="Link to Send Incident Reporting"
+        />
+      </View>
     </View>
   );
 };
 
-export default AlertVenueStaff;
+export default withNavigation(AlertVenueStaff);

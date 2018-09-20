@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import SendIncidentReport from './SendIncidentReport';
-
-export default class SendIncidentReportContainer extends Component {
+import { withNavigation } from 'react-navigation';
+class SendIncidentReportContainer extends Component {
   render() {
     return <SendIncidentReport />;
   }
 }
+
+export default withNavigation(SendIncidentReportContainer);

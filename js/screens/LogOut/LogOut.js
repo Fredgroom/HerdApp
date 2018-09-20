@@ -8,4 +8,5 @@ const LogOut = () => {
     </View>
   );
 };
+
 export default LogOut;

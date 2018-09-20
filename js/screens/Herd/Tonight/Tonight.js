@@ -1,11 +1,23 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const Tonight = () => {
+const Tonight = ({ navigation }) => {
   return (
     <View>
-      <Text>Tonight</Text>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('Event')}
+          title="Link to Event Page"
+        />
+      </View>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('Promo')}
+          title="Link to Promo Page"
+        />
+      </View>
     </View>
   );
 };
-export default Tonight;
+export default withNavigation(Tonight);

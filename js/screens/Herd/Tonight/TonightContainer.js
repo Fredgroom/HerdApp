@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import Tonight from './Tonight';
+import { withNavigation } from 'react-navigation';
 
-export default class TonightContainer extends Component {
+class TonightContainer extends Component {
   render() {
     return <Tonight />;
   }
 }
+
+export default withNavigation(TonightContainer);

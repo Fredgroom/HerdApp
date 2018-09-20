@@ -1,12 +1,15 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const ScanId = () => {
+const ScanId = ({ navigation }) => {
   return (
     <View>
-      <Text>This is the ScanId Page</Text>
+      <View>
+        <Button onPress={() => navigation.navigate('Id')} title="Link to Id" />
+      </View>
     </View>
   );
 };
 
-export default ScanId;
+export default withNavigation(ScanId);

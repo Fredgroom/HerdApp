@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import ScanId from './ScanId';
-
-export default class ScanIdContainer extends Component {
+import { withNavigation } from 'react-navigation';
+class ScanIdContainer extends Component {
   render() {
     return <ScanId />;
   }
 }
+export default withNavigation(ScanIdContainer);

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import VenueChat from './VenueChat';
-
-export default class VenueChatContainer extends Component {
+import { withNavigation } from 'react-navigation';
+class VenueChatContainer extends Component {
   render() {
     return <VenueChat />;
   }
 }
+export default withNavigation(VenueChatContainer);

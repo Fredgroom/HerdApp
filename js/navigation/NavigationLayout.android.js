@@ -1,88 +1,16 @@
 import React from 'react';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { createStackNavigator, createDrawerNavigator } from 'react-navigation';
-import { AllEventsContainer } from '../screens/Feed/AllEvents';
-import { AllPromosContainer } from '../screens/Feed/AllPromos';
-import { AllVenuesContainer } from '../screens/Feed/AllVenues';
-import { EventContainer } from '../screens/Feed/Event';
-import { FeedContainer } from '../screens/Feed';
-import { HerdContainer } from '../screens/Herd';
-import { LogOutContainer } from '../screens/LogOut';
-import { PromoContainer } from '../screens/Feed/Promo';
-import { SafetyContainer } from '../screens/Safety';
-import { ScanIdContainer } from '../screens/ScanId';
-import { sharedNavigationOptions } from './config';
-import { VenueContainer } from '../screens/Feed/Venue';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { createDrawerNavigator } from 'react-navigation';
+import {
+  FeedStack,
+  ScanIdStack,
+  SafetyStack,
+  HerdStack,
+  LogOutStack,
+} from './sharedStacks';
 
 const renderIcon = (iconName, tintColor) => (
-  <Ionicons name={iconName} size={25} color={tintColor} />
-);
-
-const FeedStack = createStackNavigator(
-  {
-    Feed: FeedContainer,
-    Promo: PromoContainer,
-    Event: EventContainer,
-    AllEvents: AllEventsContainer,
-    AllPromos: AllPromosContainer,
-    AllVenues: AllVenuesContainer,
-    Venue: VenueContainer,
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      title: navigation.state.routeName,
-      ...sharedNavigationOptions(navigation),
-      initialRouteName: 'Feed',
-    }),
-  }
-);
-
-const ScanIdStack = createStackNavigator(
-  {
-    ScanId: ScanIdContainer,
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      title: navigation.state.routeName,
-      ...sharedNavigationOptions(navigation),
-    }),
-  }
-);
-
-const SafetyStack = createStackNavigator(
-  {
-    Safety: SafetyContainer,
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      title: navigation.state.routeName,
-      ...sharedNavigationOptions(navigation),
-    }),
-  }
-);
-
-const HerdStack = createStackNavigator(
-  {
-    Herd: HerdContainer,
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      title: navigation.state.routeName,
-      ...sharedNavigationOptions(navigation),
-    }),
-  }
-);
-
-const LogOutStack = createStackNavigator(
-  {
-    LogOut: LogOutContainer,
-  },
-  {
-    navigationOptions: ({ navigation }) => ({
-      title: navigation.state.routeName,
-      ...sharedNavigationOptions(navigation),
-    }),
-  }
+  <Icon name={iconName} size={25} color={tintColor} />
 );
 
 FeedStack.navigationOptions = {
@@ -105,7 +33,7 @@ LogOutStack.navigationOptions = {
   drawerIcon: ({ tintColor }) => renderIcon('md-log-out', tintColor),
 };
 
-export default (MyApp = createDrawerNavigator(
+export default createDrawerNavigator(
   {
     Feed: FeedStack,
     ScanId: ScanIdStack,
@@ -116,4 +44,4 @@ export default (MyApp = createDrawerNavigator(
   {
     drawerWidth: 200,
   }
-));
+);

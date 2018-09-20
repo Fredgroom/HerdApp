@@ -1,12 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const SendIncidentReport = () => {
+const SendIncidentReport = ({ navigation }) => {
   return (
     <View>
-      <Text>This is the SendIncidentReport Page</Text>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('IncidentReporting')}
+          title="Close Chat"
+        />
+      </View>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('Safety')}
+          title="Link to Safety Page"
+        />
+      </View>
     </View>
   );
 };
 
-export default SendIncidentReport;
+export default withNavigation(SendIncidentReport);

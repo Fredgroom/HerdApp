@@ -1,11 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const Herd = () => {
+const Herd = ({ navigation }) => {
   return (
     <View>
-      <Text>Herd</Text>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('Tonight')}
+          title="Link to Tonight Page"
+        />
+      </View>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('CreateHerd')}
+          title="Link to Create Herd Page"
+        />
+      </View>
     </View>
   );
 };
-export default Herd;
+
+export default withNavigation(Herd);

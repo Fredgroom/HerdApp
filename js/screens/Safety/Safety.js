@@ -1,12 +1,24 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Button } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const Safety = () => {
+const Safety = ({ navigation }) => {
   return (
     <View>
-      <Text>This is the Safety Page</Text>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('IncidentReporting')}
+          title="Link to Incident Reporting"
+        />
+      </View>
+      <View>
+        <Button
+          onPress={() => navigation.navigate('AlertVenueStaff')}
+          title="Link to Alert Venue Staff"
+        />
+      </View>
     </View>
   );
 };
 
-export default Safety;
+export default withNavigation(Safety);
