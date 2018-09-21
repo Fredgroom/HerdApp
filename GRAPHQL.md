@@ -1,0 +1,7 @@
+# GraphQL
+
+## Schema
+
+
+## Seeding data
+
