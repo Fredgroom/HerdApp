@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { colours, fonts } from '../config/styles';
 
-const MenuButton = ({ navigation }) => (
+const HamburgerIcon = ({ navigation }) => (
   <Icon
     name="md-menu"
     size={25}
@@ -14,9 +14,13 @@ const MenuButton = ({ navigation }) => (
 );
 
 export const sharedNavigationOptions = (navigation) => ({
+  headerTintColor: colours.black,
+  headerTitleStyle: {
+    fontFamily: fonts.regular,
+  },
   ...Platform.select({
     android: {
-      headerLeft: <MenuButton navigation={navigation} />,
+      headerLeft: <HamburgerIcon navigation={navigation} />,
     },
   }),
 });
