@@ -1,0 +1,38 @@
+type Promotion @model {
+  id: ID! @isUnique
+  offer: String!
+  wideImageUrl: String!
+  headerImageUrl: String!
+  scanCodeImageUrl: String!
+  venue: Venue! @relation(name: "PromotionVenue")
+ }
+
+type Event @model {
+  id: ID! @isUnique
+  title: String!
+  wideImageUrl: String!
+  headerImageUrl: String!
+  secondaryImageUrls: [String!]!
+  description: String!
+  venue: Venue! @relation(name: "EventVenue")
+}
+
+type Venue @model {
+  id: ID! @isUnique
+  title: String!
+  description: String!
+  wideImageUrl: String!
+  headerImageUrl: String!
+  secondaryImageUrls: [String!]!
+  address: Address! @relation(name: "VenueAddress")
+  events: [Event!]! @relation(name: "EventVenue")
+  promotions: [Promotion!]! @relation(name: "PromotionVenue")
+}
+
+type Address @model {
+  id: ID! @isUnique
+  street: String!
+  city: String!
+  postcode: String!
+  venue: Venue! @relation(name: "VenueAddress")
+}
