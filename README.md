@@ -8,6 +8,10 @@ This repository implements Herd, an application to facilitate safe and enjoyable
 
 This project has been implemented using [these UX wireframes](./docs/ux-wireframes/index.html) as a starting point.
 
+## Deliverables
+
+The project deliverables are documented in [DELIVERABLES.md](./DELIVERABLES.md).
+
 ## Development
 
 ### Environment

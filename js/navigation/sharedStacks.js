@@ -30,7 +30,7 @@ const FeedStack = createStackNavigator(
     Promo: {
       screen: PromoContainer,
       navigationOptions: () => ({
-        title: 'Promotion',
+        title: 'Promo',
       }),
     },
     Event: {
@@ -42,19 +42,19 @@ const FeedStack = createStackNavigator(
     AllEvents: {
       screen: AllEventsContainer,
       navigationOptions: () => ({
-        title: 'Events',
+        title: 'Local Events',
       }),
     },
     AllPromos: {
       screen: AllPromosContainer,
       navigationOptions: () => ({
-        title: 'Promotions',
+        title: 'Herd Promos',
       }),
     },
     AllVenues: {
       screen: AllVenuesContainer,
       navigationOptions: () => ({
-        title: 'Venues',
+        title: 'Local Venues',
       }),
     },
     Venue: {
