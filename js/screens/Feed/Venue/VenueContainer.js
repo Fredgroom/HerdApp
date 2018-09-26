@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import Venue from './Venue';
 import { withNavigation } from 'react-navigation';
+import Venue from './Venue';
 
 class VenueContainer extends Component {
   render() {
-    return <Venue />;
+    const { itemData } = this.props.navigation.state.params;
+
+    return <Venue itemData={itemData} />;
   }
 }
 

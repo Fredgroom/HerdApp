@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import Venue from '../../../components/Venue';
 
-const AllVenues = ({ navigation }) => {
+const AllVenues = ({ allVenues }) => {
   return (
     <View>
-      <Button
-        onPress={() => navigation.navigate('Venue')}
-        title="link to Venue Page"
-      />
+      {allVenues.map((item) => (
+        <Venue key={item.id} itemData={item} />
+      ))}
     </View>
   );
 };
