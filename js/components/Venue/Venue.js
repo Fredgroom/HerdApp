@@ -14,12 +14,12 @@ class Venue extends Component {
           onPress={() => navigation.navigate('Venue', { itemData })}
         >
           <ImageBackground
-            style={{ width: 500, height: 120 }}
+            style={styles.wideImage}
             source={{ uri: itemData.wideImageUrl }}
           >
             <View>
-              <Text style={styles.text}>{itemData.title}</Text>
-              <Text style={styles.text}>
+              <Text style={styles.title}>{itemData.title}</Text>
+              <Text style={styles.address}>
                 {itemData.address.street} {itemData.address.postcode}
               </Text>
             </View>
