@@ -4,7 +4,8 @@ import { withNavigation } from 'react-navigation';
 
 class PromoContainer extends Component {
   render() {
-    return <Promo />;
+    const { itemData } = this.props.navigation.state.params;
+    return <Promo itemData={itemData} />;
   }
 }
 
