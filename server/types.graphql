@@ -10,6 +10,7 @@ type Promotion @model {
 type Event @model {
   id: ID! @isUnique
   title: String!
+  date: DateTime!
   wideImageUrl: String!
   headerImageUrl: String!
   secondaryImageUrls: [String!]!

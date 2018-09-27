@@ -4,7 +4,9 @@ import { withNavigation } from 'react-navigation';
 
 class EventContainer extends Component {
   render() {
-    return <Event />;
+    const { itemData } = this.props.navigation.state.params;
+
+    return <Event itemData={itemData} />;
   }
 }
 

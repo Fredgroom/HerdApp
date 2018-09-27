@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import Event from '../../../components/Event';
 
-const AllEvents = ({ navigation }) => {
+const AllEvents = ({ allEvents }) => {
   return (
     <View>
-      <Button
-        onPress={() => navigation.navigate('Event')}
-        title="link to Event Page"
-      />
+      {allEvents.map((item) => (
+        <Event key={item.id} itemData={item} />
+      ))}
     </View>
   );
 };
