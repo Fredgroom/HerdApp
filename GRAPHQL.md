@@ -98,12 +98,12 @@ mutation {
   createEvent(
     title: "Comedy Night"
     date: "2015-11-22T13:57:31.123Z"
-    wideImageUrl: "https://www.baconmockup.com/600/200"
-    headerImageUrl: "https://www.baconmockup.com/600/400"
+    wideImageUrl: "https://placekitten.com/600/200"
+    headerImageUrl: "https://placekitten.com/600/400"
     secondaryImageUrls: [
-      "https://www.baconmockup.com/200/200"
-      "https://www.baconmockup.com/200/200"
-      "https://www.baconmockup.com/200/200"
+      "https://placekitten.com/200/200"
+      "https://placekitten.com/201/201"
+      "https://placekitten.com/202/202"
     ]
     description: "Join to see the latest comedy acts from Edinburgh fringe festival"
     venueId: "__VENUE_ID_FROM_FIRST_STEP__"
