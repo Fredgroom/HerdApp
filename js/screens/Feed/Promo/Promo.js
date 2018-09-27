@@ -3,7 +3,7 @@ import { Text, View, Button, ImageBackground, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
-const Promo = ({ itemData, navigation }) => {
+const Promo = ({ promoData, navigation }) => {
   return (
     <View>
       <Button
@@ -12,18 +12,18 @@ const Promo = ({ itemData, navigation }) => {
       />
       <ImageBackground
         style={styles.headerImage}
-        source={{ uri: itemData.headerImageUrl }}
+        source={{ uri: promoData.headerImageUrl }}
       >
         <View>
-          <Text style={styles.offer}>{itemData.offer}</Text>
-          <Text style={styles.title}>{itemData.venue.title}</Text>
+          <Text style={styles.offer}>{promoData.offer}</Text>
+          <Text style={styles.title}>{promoData.venue.title}</Text>
         </View>
       </ImageBackground>
       <View>
         <Text>Scan your code to get free drinks</Text>
         <Image
           style={styles.scanCodeImageUrl}
-          source={{ uri: itemData.scanCodeImageUrl }}
+          source={{ uri: promoData.scanCodeImageUrl }}
         />
       </View>
     </View>

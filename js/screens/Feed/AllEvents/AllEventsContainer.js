@@ -11,10 +11,12 @@ const AllEventsQuery = gql`
       id
       title
       date
+      description
       wideImageUrl
       headerImageUrl
       secondaryImageUrls
       venue {
+        id
         title
         address {
           street

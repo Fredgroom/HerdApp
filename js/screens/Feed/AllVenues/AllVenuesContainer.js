@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import AllVenues from './AllVenues';
 import { withNavigation } from 'react-navigation';
-import Loader from '../../../components/Loader';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
+import AllVenues from './AllVenues';
+import Loader from '../../../components/Loader';
 
 const allVenuesQuery = gql`
   query {

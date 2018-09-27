@@ -6,8 +6,8 @@ import Event from '../../../components/Event';
 const AllEvents = ({ allEvents }) => {
   return (
     <View>
-      {allEvents.map((item) => (
-        <Event key={item.id} itemData={item} />
+      {allEvents.map((event) => (
+        <Event key={event.id} eventData={event} />
       ))}
     </View>
   );

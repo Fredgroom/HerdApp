@@ -6,19 +6,19 @@ import { withNavigation } from 'react-navigation';
 
 class Promo extends Component {
   render() {
-    const { itemData, navigation } = this.props;
+    const { promoData, navigation } = this.props;
     return (
       <View>
         <TouchableHighlight
-          onPress={() => navigation.navigate('Promo', { itemData })}
+          onPress={() => navigation.navigate('Promo', { promoData })}
         >
           <ImageBackground
             style={styles.wideImage}
-            source={{ uri: itemData.wideImageUrl }}
+            source={{ uri: promoData.wideImageUrl }}
           >
             <View>
-              <Text style={styles.offer}>{itemData.offer}</Text>
-              <Text style={styles.title}>{itemData.venue.title}</Text>
+              <Text style={styles.offer}>{promoData.offer}</Text>
+              <Text style={styles.title}>{promoData.venue.title}</Text>
             </View>
           </ImageBackground>
         </TouchableHighlight>
@@ -28,7 +28,7 @@ class Promo extends Component {
 }
 
 Promo.propTypes = {
-  itemData: PropTypes.object.isRequired,
+  promoData: PropTypes.object.isRequired,
 };
 
 export default withNavigation(Promo);

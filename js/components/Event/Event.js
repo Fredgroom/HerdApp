@@ -17,24 +17,24 @@ class Event extends Component {
   }
 
   render() {
-    const { itemData, navigation } = this.props;
+    const { eventData, navigation } = this.props;
     return (
       <View>
         <TouchableHighlight
-          onPress={() => navigation.navigate('Event', { itemData })}
+          onPress={() => navigation.navigate('Event', { eventData })}
         >
           <ImageBackground
             style={styles.wideImage}
-            source={{ uri: itemData.wideImageUrl }}
+            source={{ uri: eventData.wideImageUrl }}
           >
             <View>
-              <Text style={styles.text}>{itemData.title}</Text>
-              <Text style={styles.text}>{itemData.venue.title}</Text>
+              <Text style={styles.text}>{eventData.title}</Text>
+              <Text style={styles.text}>{eventData.venue.title}</Text>
               <Text style={styles.text}>
-                {this.extractEventMonth(itemData.date)}
+                {this.extractEventMonth(eventData.date)}
               </Text>
               <Text style={styles.text}>
-                {this.extractEventDay(itemData.date)}
+                {this.extractEventDay(eventData.date)}
               </Text>
             </View>
           </ImageBackground>
@@ -45,7 +45,7 @@ class Event extends Component {
 }
 
 Event.propTypes = {
-  itemData: PropTypes.object.isRequired,
+  eventData: PropTypes.object.isRequired,
 };
 
 export default withNavigation(Event);
