@@ -6,21 +6,20 @@ import { styles } from './styles';
 
 class Venue extends Component {
   render() {
-    const { itemData, navigation } = this.props;
-
+    const { venueData, navigation } = this.props;
     return (
       <View>
         <TouchableHighlight
-          onPress={() => navigation.navigate('Venue', { itemData })}
+          onPress={() => navigation.navigate('Venue', { venueData })}
         >
           <ImageBackground
             style={styles.wideImage}
-            source={{ uri: itemData.wideImageUrl }}
+            source={{ uri: venueData.wideImageUrl }}
           >
             <View>
-              <Text style={styles.title}>{itemData.title}</Text>
+              <Text style={styles.title}>{venueData.title}</Text>
               <Text style={styles.address}>
-                {itemData.address.street} {itemData.address.postcode}
+                {venueData.address.street} {venueData.address.postcode}
               </Text>
             </View>
           </ImageBackground>
@@ -31,7 +30,7 @@ class Venue extends Component {
 }
 
 Venue.propTypes = {
-  itemData: PropTypes.object.isRequired,
+  venueData: PropTypes.object.isRequired,
 };
 
 export default withNavigation(Venue);

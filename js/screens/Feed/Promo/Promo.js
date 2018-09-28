@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Text, View, Button, ImageBackground, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
@@ -28,6 +29,10 @@ const Promo = ({ promoData, navigation }) => {
       </View>
     </View>
   );
+};
+
+Promo.propTypes = {
+  promoData: PropTypes.object.isRequired,
 };
 
 export default withNavigation(Promo);

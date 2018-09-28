@@ -4,7 +4,7 @@ import { View, Button, Text, ImageBackground, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
-const Venue = ({ itemData, navigation }) => {
+const Venue = ({ venueData, navigation }) => {
   return (
     <View>
       <Button
@@ -13,14 +13,14 @@ const Venue = ({ itemData, navigation }) => {
       />
       <ImageBackground
         style={styles.headerImage}
-        source={{ uri: itemData.headerImageUrl }}
+        source={{ uri: venueData.headerImageUrl }}
       >
-        <Text style={styles.title}>{itemData.title}</Text>
+        <Text style={styles.title}>{venueData.title}</Text>
       </ImageBackground>
-      <Text>{itemData.description}</Text>
+      <Text>{venueData.description}</Text>
 
       <View>
-        {itemData.secondaryImageUrls.map((imageUrl, index) => (
+        {venueData.secondaryImageUrls.map((imageUrl, index) => (
           <Image
             style={styles.secondaryImage}
             key={index}
@@ -33,7 +33,7 @@ const Venue = ({ itemData, navigation }) => {
 };
 
 Venue.propTypes = {
-  itemData: PropTypes.object.isRequired,
+  venueData: PropTypes.object.isRequired,
 };
 
 export default withNavigation(Venue);

@@ -1,76 +1,55 @@
 import React from 'react';
-import { View, Button, Text } from 'react-native';
+import PropTypes from 'prop-types';
+import { View, Text, TouchableHighlight } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import { fonts } from '../../config/styles';
+import { styles } from './styles';
+import Promo from '../../components/Promo';
+import Event from '../../components/Event';
+import Venue from '../../components/Venue';
 
-const Feed = ({ navigation }) => {
+const Feed = ({ navigation, promoData, eventData, venueData }) => {
   return (
     <View>
+      <Text>
+        Your guide to all local events and promotions at venues near you.
+      </Text>
       <View>
-        <Button
-          onPress={() => navigation.navigate('Promo')}
-          title="link to Promo Page"
-        />
-      </View>
-      <View>
-        <Button
-          onPress={() => navigation.navigate('Event')}
-          title="link to Event Page"
-        />
-      </View>
-      <View>
-        <Button
-          onPress={() => navigation.navigate('AllEvents')}
-          title="link to AllEvents Page"
-        />
-      </View>
-      <View>
-        <Button
-          onPress={() => navigation.navigate('AllPromos')}
-          title="link to AllPromos Page"
-        />
-      </View>
-      <View>
-        <Button
-          onPress={() => navigation.navigate('AllVenues')}
-          title="link to AllVenues Page"
-        />
-      </View>
-      <View>
-        <Button
-          onPress={() => navigation.navigate('Venue')}
-          title="link to Venue Page"
-        />
+        <View style={styles.feedHeaderText}>
+          <Text>EXCLUSIVE HERD OFFERS</Text>
+          <TouchableHighlight onPress={() => navigation.navigate('AllPromos')}>
+            <Text>more...</Text>
+          </TouchableHighlight>
+        </View>
+        <Promo promoData={promoData} />
       </View>
 
       <View>
-        <Text>Sample text:</Text>
+        <View style={styles.feedHeaderText}>
+          <Text>LOCAL EVENTS FOR YOU</Text>
+          <TouchableHighlight onPress={() => navigation.navigate('AllEvents')}>
+            <Text>more...</Text>
+          </TouchableHighlight>
+        </View>
+        <Event eventData={eventData} />
       </View>
+
       <View>
-        <Text>No style applied</Text>
-      </View>
-      <View>
-        <Text style={{ fontFamily: fonts.thin }}>Montserrat Thin</Text>
-      </View>
-      <View>
-        <Text style={{ fontFamily: fonts.extraLight }}>
-          Montserrat ExtraLight
-        </Text>
-      </View>
-      <View>
-        <Text style={{ fontFamily: fonts.light }}>Montserrat Light</Text>
-      </View>
-      <View>
-        <Text style={{ fontFamily: fonts.regular }}>Montserrat Regular</Text>
-      </View>
-      <View>
-        <Text style={{ fontFamily: fonts.semiBold }}>Montserrat SemiBold</Text>
-      </View>
-      <View>
-        <Text style={{ fontFamily: fonts.bold }}>Montserrat Bold</Text>
+        <View style={styles.feedHeaderText}>
+          <Text>YOUR LOCAL VENUES</Text>
+          <TouchableHighlight onPress={() => navigation.navigate('AllVenues')}>
+            <Text>more...</Text>
+          </TouchableHighlight>
+        </View>
+        <Venue venueData={venueData} />
       </View>
     </View>
   );
+};
+
+Feed.propTypes = {
+  promoData: PropTypes.object.isRequired,
+  eventData: PropTypes.object.isRequired,
+  venueData: PropTypes.object.isRequired,
 };
 
 export default withNavigation(Feed);

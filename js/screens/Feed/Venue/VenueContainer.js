@@ -4,9 +4,9 @@ import Venue from './Venue';
 
 class VenueContainer extends Component {
   render() {
-    const { itemData } = this.props.navigation.state.params;
+    const { venueData } = this.props.navigation.state.params;
 
-    return <Venue itemData={itemData} />;
+    return <Venue venueData={venueData} />;
   }
 }
 
