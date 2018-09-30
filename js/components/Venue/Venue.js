@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View, Text, ImageBackground, TouchableHighlight } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 class Venue extends Component {
   render() {

@@ -1,3 +1,6 @@
+import { React } from 'React';
+import { Button } from 'react-native';
+
 import { createStackNavigator } from 'react-navigation';
 import { sharedNavigationOptions } from './config';
 import { AlertVenueStaffContainer } from '../screens/Safety/AlertVenueStaff';
@@ -18,6 +21,7 @@ import { SendIncidentReportContainer } from '../screens/Safety/SendIncidentRepor
 import { TonightContainer } from '../screens/Herd/Tonight';
 import { VenueChatContainer } from '../screens/Safety/VenueChat';
 import { VenueContainer } from '../screens/Feed/Venue';
+import { colours } from '../config/styles';
 
 const FeedStack = createStackNavigator(
   {
@@ -55,12 +59,35 @@ const FeedStack = createStackNavigator(
       screen: AllVenuesContainer,
       navigationOptions: () => ({
         title: 'Local Venues',
+        titleStyle: {
+          alignSelf: 'center',
+        },
+        headerBackTitleStyle: {
+          color: colours.blue,
+        },
+        headerTintColor: {
+          color: colours.blue,
+        },
+        headerTitleStyle: {
+          textAlign: 'center',
+          alignSelf: 'center',
+        },
       }),
     },
     Venue: {
       screen: VenueContainer,
       navigationOptions: () => ({
         title: 'Venue',
+        headerBackTitleStyle: {
+          color: colours.blue,
+        },
+        headerTintColor: {
+          color: colours.blue,
+        },
+        headerTitleStyle: {
+          textAlign: 'center',
+          alignSelf: 'center',
+        },
       }),
     },
   },
@@ -186,6 +213,7 @@ const LogOutStack = createStackNavigator(
       screen: LogOutContainer,
       navigationOptions: () => ({
         title: 'Log Out',
+        headerBackTitleStyle: colours.blue,
       }),
     },
   },

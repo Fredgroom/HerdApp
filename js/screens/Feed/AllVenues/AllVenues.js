@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import Venue from '../../../components/Venue';
+import { styles } from './styles';
 
 const AllVenues = ({ allVenues }) => {
   return (
-    <View>
-      {allVenues.map((venue) => (
-        <Venue key={venue.id} venueData={venue} />
-      ))}
+    <View style={styles.container}>
+      <ScrollView>
+        {allVenues.map((venue) => (
+          <Venue key={venue.id} venueData={venue} />
+        ))}
+      </ScrollView>
     </View>
   );
 };

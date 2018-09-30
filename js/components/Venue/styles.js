@@ -1,19 +1,31 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { colours } from '../../config/styles';
+import { fonts } from '../../config/styles';
+
+const { height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   title: {
     color: colours.white,
-    backgroundColor: colours.black,
-    width: 105,
+    backgroundColor: colours.transparentBlack,
+    alignSelf: 'flex-start',
+    padding: 3,
+    paddingBottom: 3,
+    fontFamily: fonts.bold,
   },
   address: {
     color: colours.white,
-    backgroundColor: colours.black,
-    width: 115,
+    backgroundColor: colours.transparentBlack,
+    marginVertical: 1,
+    padding: 3,
+    paddingBottom: 3,
+    alignSelf: 'flex-start',
+    fontFamily: fonts.regular,
   },
   wideImage: {
-    width: 500,
-    height: 120,
+    margin: 10,
+    marginVertical: 5,
+    justifyContent: 'flex-end',
+    height: height * 0.2,
   },
 });

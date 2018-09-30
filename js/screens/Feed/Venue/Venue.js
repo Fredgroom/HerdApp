@@ -1,25 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Button, Text, ImageBackground, Image } from 'react-native';
+import {
+  ScrollView,
+  View,
+  Button,
+  Text,
+  ImageBackground,
+  Image,
+  Platform,
+} from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
 const Venue = ({ venueData, navigation }) => {
+  const os = Platform.OS;
+
   return (
-    <View>
-      <Button
-        onPress={() => navigation.navigate('AllVenues')}
-        title="link to All Venues"
-      />
+    <ScrollView>
       <ImageBackground
         style={styles.headerImage}
         source={{ uri: venueData.headerImageUrl }}
       >
-        <Text style={styles.title}>{venueData.title}</Text>
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{venueData.title}</Text>
+        </View>
       </ImageBackground>
-      <Text>{venueData.description}</Text>
+      <Text style={styles.description}>{venueData.description}</Text>
 
-      <View>
+      <View style={styles.secondaryImageContainer}>
         {venueData.secondaryImageUrls.map((imageUrl, index) => (
           <Image
             style={styles.secondaryImage}
@@ -28,7 +36,17 @@ const Venue = ({ venueData, navigation }) => {
           />
         ))}
       </View>
-    </View>
+      {os === 'android' && (
+        <View>
+          <Text
+            style={styles.allVenuesButton}
+            onPress={() => navigation.navigate('AllVenues')}
+          >
+            link to All Venues
+          </Text>
+        </View>
+      )}
+    </ScrollView>
   );
 };
 
