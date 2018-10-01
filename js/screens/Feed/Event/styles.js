@@ -7,10 +7,11 @@ const { width, height } = Dimensions.get('window');
 export const styles = StyleSheet.create({
   title: {
     color: colours.white,
+    fontFamily: fonts.regular,
   },
   secondHeading: {
     color: colours.white,
-    fontWeight: 'bold',
+    fontFamily: fonts.bold,
   },
   titleContainer: {
     backgroundColor: colours.black,
@@ -36,24 +37,14 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     width: width * 0.94,
     marginVertical: height * 0.025,
-    padding: 2,
     fontSize: height * 0.025,
+    marginVertical: 3,
+    fontFamily: fonts.regular,
   },
   backgroundColour: {
     backgroundColor: colours.transparentBlack,
     alignSelf: 'flex-start',
     padding: height * 0.01,
     margin: height * 0.001,
-  },
-  allEventsButton: {
-    width: width * 0.5,
-    backgroundColor: colours.white,
-    color: colours.black,
-    alignSelf: 'center',
-    textAlign: 'center',
-    borderRadius: 50,
-    borderColor: colours.black,
-    marginVertical: height * 0.05,
-    fontSize: height * 0.025,
   },
 });

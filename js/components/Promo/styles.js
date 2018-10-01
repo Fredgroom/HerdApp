@@ -18,7 +18,6 @@ export const styles = StyleSheet.create({
   wideImage: {
     margin: 10,
     marginVertical: 5,
-    justifyContent: 'flex-end',
     height: height * 0.2,
   },
   backgroundColor: {

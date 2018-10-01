@@ -1,11 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { colours } from '../../../config/styles';
+import { colours, fonts } from '../../../config/styles';
 
 const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   title: {
     color: colours.white,
+    fontFamily: fonts.regular,
   },
   titleContainer: {
     backgroundColor: colours.black,
@@ -33,15 +34,6 @@ export const styles = StyleSheet.create({
     width: width * 0.94,
     marginVertical: height * 0.025,
     padding: 2,
-  },
-  allVenuesButton: {
-    width: width * 0.5,
-    backgroundColor: colours.white,
-    color: colours.black,
-    alignSelf: 'center',
-    textAlign: 'center',
-    borderRadius: 50,
-    borderColor: colours.black,
-    marginVertical: height * 0.05,
+    fontFamily: fonts.regular,
   },
 });

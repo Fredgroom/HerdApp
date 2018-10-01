@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   subHeading: {
     color: colours.white,
     textAlign: 'right',
+    fontFamily: fonts.regular,
   },
   address: {
     color: colours.white,
@@ -36,6 +37,7 @@ export const styles = StyleSheet.create({
     color: colours.white,
     fontSize: 12,
     textAlign: 'center',
+    fontFamily: fonts.regular,
   },
   day: {
     color: colours.white,
