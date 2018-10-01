@@ -27,15 +27,23 @@ class Event extends Component {
             style={styles.wideImage}
             source={{ uri: eventData.wideImageUrl }}
           >
-            <View>
-              <Text style={styles.text}>{eventData.title}</Text>
-              <Text style={styles.text}>{eventData.venue.title}</Text>
-              <Text style={styles.text}>
-                {this.extractEventMonth(eventData.date)}
-              </Text>
-              <Text style={styles.text}>
-                {this.extractEventDay(eventData.date)}
-              </Text>
+            <View style={styles.textContainer}>
+              <View style={styles.titleContainer}>
+                <View style={styles.titleBackground}>
+                  <Text style={styles.title}>{eventData.title}</Text>
+                </View>
+                <View style={styles.subHeadingBackground}>
+                  <Text style={styles.subHeading}>{eventData.venue.title}</Text>
+                </View>
+              </View>
+              <View style={styles.dateContainer}>
+                <Text style={styles.month}>
+                  {this.extractEventMonth(eventData.date)}
+                </Text>
+                <Text style={styles.day}>
+                  {this.extractEventDay(eventData.date)}
+                </Text>
+              </View>
             </View>
           </ImageBackground>
         </TouchableHighlight>

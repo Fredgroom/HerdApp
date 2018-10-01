@@ -1,6 +1,5 @@
-import { React } from 'React';
-import { Button } from 'react-native';
-
+import React from 'react';
+import { Button, Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import { sharedNavigationOptions } from './config';
 import { AlertVenueStaffContainer } from '../screens/Safety/AlertVenueStaff';
@@ -39,8 +38,20 @@ const FeedStack = createStackNavigator(
     },
     Event: {
       screen: EventContainer,
-      navigationOptions: () => ({
+      navigationOptions: ({ navigation }) => ({
         title: 'Event',
+        headerRight: (
+          <Text
+            style={{
+              color: colours.blue,
+              marginRight: 10,
+              fontSize: 17,
+            }}
+            onPress={() => navigation.navigate('AllEvents')}
+          >
+            All Events
+          </Text>
+        ),
       }),
     },
     AllEvents: {
@@ -59,35 +70,24 @@ const FeedStack = createStackNavigator(
       screen: AllVenuesContainer,
       navigationOptions: () => ({
         title: 'Local Venues',
-        titleStyle: {
-          alignSelf: 'center',
-        },
-        headerBackTitleStyle: {
-          color: colours.blue,
-        },
-        headerTintColor: {
-          color: colours.blue,
-        },
-        headerTitleStyle: {
-          textAlign: 'center',
-          alignSelf: 'center',
-        },
       }),
     },
     Venue: {
       screen: VenueContainer,
-      navigationOptions: () => ({
+      navigationOptions: ({ navigation }) => ({
         title: 'Venue',
-        headerBackTitleStyle: {
-          color: colours.blue,
-        },
-        headerTintColor: {
-          color: colours.blue,
-        },
-        headerTitleStyle: {
-          textAlign: 'center',
-          alignSelf: 'center',
-        },
+        headerRight: (
+          <Text
+            style={{
+              color: colours.blue,
+              marginRight: 10,
+              fontSize: 17,
+            }}
+            onPress={() => navigation.navigate('AllVenues')}
+          >
+            All Venues
+          </Text>
+        ),
       }),
     },
   },
@@ -96,6 +96,13 @@ const FeedStack = createStackNavigator(
       title: navigation.state.routeName,
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'Feed',
+      headerBackTitleStyle: {
+        color: colours.blue,
+      },
+      headerTintColor: colours.blue,
+      headerTitleStyle: {
+        color: colours.black,
+      },
     }),
   }
 );
@@ -213,7 +220,6 @@ const LogOutStack = createStackNavigator(
       screen: LogOutContainer,
       navigationOptions: () => ({
         title: 'Log Out',
-        headerBackTitleStyle: colours.blue,
       }),
     },
   },

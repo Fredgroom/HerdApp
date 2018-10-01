@@ -1,29 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Button, Text, ImageBackground, Image } from 'react-native';
+import { View, Text, ImageBackground, Image, Platform } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
 const Event = ({ eventData, navigation }) => {
+  const os = Platform.OS;
   return (
     <View>
-      <Button
-        onPress={() => navigation.navigate('AllEvents')}
-        title="link to All Events"
-      />
       <ImageBackground
         style={styles.headerImage}
         source={{ uri: eventData.headerImageUrl }}
       >
         <View>
-          <Text style={styles.text}>{eventData.title}</Text>
-          <Text style={styles.text}>{eventData.venue.title}</Text>
+          <Text style={styles.title}>{eventData.title}</Text>
+          <Text style={styles.secondHeading}>{eventData.venue.title}</Text>
         </View>
       </ImageBackground>
-      <Text>{eventData.description}</Text>
-      {eventData.secondaryImageUrls.map((imageUrl, index) => (
-        <Image key={index} style={styles.tabImage} source={{ uri: imageUrl }} />
-      ))}
+      <Text style={styles.description}>{eventData.description}</Text>
+      <View style={styles.secondaryImageContainer}>
+        {eventData.secondaryImageUrls.map((imageUrl, index) => (
+          <Image
+            style={styles.secondaryImage}
+            key={index}
+            source={{ uri: imageUrl }}
+          />
+        ))}
+      </View>
+      {os === 'android' && (
+        <Text
+          style={styles.allEventsButton}
+          onPress={() => navigation.navigate('AllEvents')}
+        >
+          link to All Events
+        </Text>
+      )}
     </View>
   );
 };

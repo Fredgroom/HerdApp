@@ -1,5 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { colours } from '../../config/styles';
+
+const { height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   title: {
@@ -13,7 +15,9 @@ export const styles = StyleSheet.create({
     width: 170,
   },
   wideImage: {
-    width: 400,
-    height: 120,
+    margin: 10,
+    marginVertical: 5,
+    justifyContent: 'flex-end',
+    height: height * 0.2,
   },
 });

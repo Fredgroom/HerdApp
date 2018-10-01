@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Event from './Event';
 import Loader from '../../../components/Loader';
 import Promo from '../../../components/Promo';
+import { styles } from './styles';
 
 const eventPromoQuery = gql`
   query EventPromo($venueId: ID!) {
@@ -35,10 +36,10 @@ class EventContainer extends Component {
           }
           const promoData = data.allPromotions[0];
           return (
-            <View>
+            <ScrollView>
               <Event eventData={eventData} />
-              <Promo promoData={promoData} />
-            </View>
+              <Promo style={styles.wideImage} promoData={promoData} />
+            </ScrollView>
           );
         }}
       </Query>

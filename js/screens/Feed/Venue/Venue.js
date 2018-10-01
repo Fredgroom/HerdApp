@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  ScrollView,
   View,
-  Button,
   Text,
   ImageBackground,
   Image,
   Platform,
+  ScrollView,
 } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
@@ -36,6 +35,7 @@ const Venue = ({ venueData, navigation }) => {
           />
         ))}
       </View>
+
       {os === 'android' && (
         <View>
           <Text
