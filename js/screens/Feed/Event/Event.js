@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Text, ImageBackground, Image, Platform } from 'react-native';
+import { View, Text, ImageBackground, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
 const Event = ({ eventData, navigation }) => {
-  const os = Platform.OS;
   return (
     <View>
       <ImageBackground
@@ -31,14 +30,6 @@ const Event = ({ eventData, navigation }) => {
           />
         ))}
       </View>
-      {os === 'android' && (
-        <Text
-          style={styles.allEventsButton}
-          onPress={() => navigation.navigate('AllEvents')}
-        >
-          link to All Events
-        </Text>
-      )}
     </View>
   );
 };

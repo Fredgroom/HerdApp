@@ -1,19 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  View,
-  Text,
-  ImageBackground,
-  Image,
-  Platform,
-  ScrollView,
-} from 'react-native';
+import { View, Text, ImageBackground, Image, ScrollView } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
 const Venue = ({ venueData, navigation }) => {
-  const os = Platform.OS;
-
   return (
     <ScrollView>
       <ImageBackground
@@ -35,17 +26,6 @@ const Venue = ({ venueData, navigation }) => {
           />
         ))}
       </View>
-
-      {os === 'android' && (
-        <View>
-          <Text
-            style={styles.allVenuesButton}
-            onPress={() => navigation.navigate('AllVenues')}
-          >
-            link to All Venues
-          </Text>
-        </View>
-      )}
     </ScrollView>
   );
 };
