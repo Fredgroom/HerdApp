@@ -9,7 +9,8 @@ export const styles = StyleSheet.create({
   },
   titleContainer: {
     backgroundColor: colours.black,
-    padding: 2,
+    alignSelf: 'flex-start',
+    padding: width * 0.01,
     opacity: 0.6,
   },
   headerImage: {

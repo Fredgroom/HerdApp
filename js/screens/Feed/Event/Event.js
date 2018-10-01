@@ -13,8 +13,12 @@ const Event = ({ eventData, navigation }) => {
         source={{ uri: eventData.headerImageUrl }}
       >
         <View>
-          <Text style={styles.title}>{eventData.title}</Text>
-          <Text style={styles.secondHeading}>{eventData.venue.title}</Text>
+          <View style={styles.backgroundColour}>
+            <Text style={styles.title}>{eventData.title}</Text>
+          </View>
+          <View style={styles.backgroundColour}>
+            <Text style={styles.secondHeading}>{eventData.venue.title}</Text>
+          </View>
         </View>
       </ImageBackground>
       <Text style={styles.description}>{eventData.description}</Text>

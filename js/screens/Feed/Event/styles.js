@@ -37,6 +37,13 @@ export const styles = StyleSheet.create({
     width: width * 0.94,
     marginVertical: height * 0.025,
     padding: 2,
+    fontSize: height * 0.025,
+  },
+  backgroundColour: {
+    backgroundColor: colours.transparentBlack,
+    alignSelf: 'flex-start',
+    padding: height * 0.01,
+    margin: height * 0.001,
   },
   allEventsButton: {
     width: width * 0.5,
@@ -47,5 +54,6 @@ export const styles = StyleSheet.create({
     borderRadius: 50,
     borderColor: colours.black,
     marginVertical: height * 0.05,
+    fontSize: height * 0.025,
   },
 });
