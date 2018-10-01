@@ -15,7 +15,7 @@ const Feed = ({ navigation, promoData, eventData, venueData }) => {
       </Text>
       <View>
         <View style={styles.feedHeaderText}>
-          <Text style={styles.componentTitle}>EXCLUSIVE HERD OFFERS</Text>
+          <Text style={styles.componentTitle}>EXCLUSIVE HERD PROMOS</Text>
           <TouchableHighlight onPress={() => navigation.navigate('AllPromos')}>
             <Text style={styles.moreLink}>MORE...</Text>
           </TouchableHighlight>
