@@ -1,7 +1,6 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator } from 'react-navigation';
-import { colours } from '../config/styles';
 import {
   FeedStack,
   ScanIdStack,
@@ -37,8 +36,5 @@ export default createBottomTabNavigator(
         return <Icon name={iconName} size={25} color={tintColor} />;
       },
     }),
-    tabBarOptions: {
-      activeTintColor: colours.blue,
-    },
   }
 );

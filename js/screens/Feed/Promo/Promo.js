@@ -1,33 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Text, View, Button, ImageBackground, Image } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { View, Text, ScrollView, ImageBackground, Image } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
-const Promo = ({ promoData, navigation }) => {
+const Promo = ({ promoData }) => {
   return (
-    <View>
-      <Button
-        onPress={() => navigation.navigate('AllPromos')}
-        title="link to AllPromos Page"
-      />
-      <ImageBackground
-        style={styles.headerImage}
-        source={{ uri: promoData.headerImageUrl }}
-      >
-        <View>
-          <Text style={styles.offer}>{promoData.offer}</Text>
-          <Text style={styles.title}>{promoData.venue.title}</Text>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.promoContainer}>
+        <ImageBackground
+          style={styles.headerImage}
+          source={{ uri: promoData.headerImageUrl }}
+        >
+          <View style={styles.backgroundColor}>
+            <Text style={styles.offer}>{promoData.offer}</Text>
+          </View>
+          <View style={styles.backgroundColor}>
+            <Text style={styles.title}>
+              <Icon name="ios-pin" size={20} /> {promoData.venue.title}
+            </Text>
+          </View>
+        </ImageBackground>
+        <View style={styles.scanCodeContainer}>
+          <Text style={styles.scanCodeText}>
+            Scan your code to get your free drinks
+          </Text>
+          <Image
+            style={styles.scanCodeImageUrl}
+            source={{ uri: promoData.scanCodeImageUrl }}
+            resizeMode="contain"
+          />
         </View>
-      </ImageBackground>
-      <View>
-        <Text>Scan your code to get free drinks</Text>
-        <Image
-          style={styles.scanCodeImageUrl}
-          source={{ uri: promoData.scanCodeImageUrl }}
-        />
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

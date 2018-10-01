@@ -1,6 +1,8 @@
 import React from 'react';
-import { Button, Text } from 'react-native';
+import { Text } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
+import { colours } from '../config/styles';
+import { styles } from './styles';
 import { sharedNavigationOptions } from './config';
 import { AlertVenueStaffContainer } from '../screens/Safety/AlertVenueStaff';
 import { AllEventsContainer } from '../screens/Feed/AllEvents';
@@ -20,7 +22,6 @@ import { SendIncidentReportContainer } from '../screens/Safety/SendIncidentRepor
 import { TonightContainer } from '../screens/Herd/Tonight';
 import { VenueChatContainer } from '../screens/Safety/VenueChat';
 import { VenueContainer } from '../screens/Feed/Venue';
-import { colours } from '../config/styles';
 
 const FeedStack = createStackNavigator(
   {
@@ -32,8 +33,16 @@ const FeedStack = createStackNavigator(
     },
     Promo: {
       screen: PromoContainer,
-      navigationOptions: () => ({
+      navigationOptions: ({ navigation }) => ({
         title: 'Promo',
+        headerRight: (
+          <Text
+            style={styles.headerRight}
+            onPress={() => navigation.navigate('AllPromos')}
+          >
+            All Promos
+          </Text>
+        ),
       }),
     },
     Event: {
@@ -42,11 +51,7 @@ const FeedStack = createStackNavigator(
         title: 'Event',
         headerRight: (
           <Text
-            style={{
-              color: colours.blue,
-              marginRight: 10,
-              fontSize: 17,
-            }}
+            style={styles.headerRight}
             onPress={() => navigation.navigate('AllEvents')}
           >
             All Events
