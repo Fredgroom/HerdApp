@@ -1,5 +1,7 @@
 # GraphQL
 
+> **NOTE:** for all the shell commands below, ensure that you are in the `server` directory when you run them.
+
 ## Schema
 
 This project uses [graph.cool](https://www.graph.cool/docs/) to define and implement the GraphQL schema.
@@ -12,13 +14,85 @@ yarn global add graphcool
 
 The relevant files can be found in the [`server`](./server) directory.
 
+## Changing Graphcool deployment
+
+You will need to change the Graphcool deployment to your own Graphcool account.
+
+### Log in to graphcool
+
+```sh
+$ cd server
+$ graphcool login
+```
+
+A web browser window will open, requesting permission to authenticate:
+
+![Graphcool - authenticate to continue](./graphcool-authenticate.png "Graphcool - authenticate to continue")
+
+Sign in, or sign up with your chosen authentication method.
+
+If you you choose GitHub, for example, you will see GitHub's **Authorize Graphcool** screen; click the **Authorize prisma** button:
+
+![Authorize Graphcool](./authorize-graphcool.png "Authorize Graphcool")
+
+Your terminal will now display a confirmation message:
+
+```
+Auth URL: https://console.graph.cool/cli/auth?cliToken=CLI_TOKEN&authTrigger=auth
+Authenticating... ✔
+You are already authenticated. Your local token is saved at /Users/YOUR_USERNAME/.graphcoolrc
+```
+
+### Deploy the schema
+
+You can now deploy the schema to your own Graphcool account.
+
+Firstly, remove the `.graphcoolrc` file:
+
+```sh
+rm .graphcoolrc
+```
+
+Then deploy the schema:
+
+```sh
+$ graphcool deploy
+```
+
+Choose `shared-eu-west-1` for the cluster, accept the default `target` and `server` names.
+
+This will create a new `.graphcoolrc` file.
+
+### Update the source code
+
+You now need to point to your new Graphcool service in the source code.
+
+Find out your server id:
+
+```sh
+$ graphcool info
+
+Service Name Cluster / Service ID
+──────────── ────────────────────────────────────────────
+server       shared-eu-west-1/SERVICE_ID
+
+API:           Endpoint:
+────────────── ────────────────────────────────────────────────────────────
+Simple         https://api.graph.cool/simple/v1/SERVICE_ID
+Relay          https://api.graph.cool/relay/v1/SERVICE_ID
+Subscriptions  wss://subscriptions.graph.cool/v1/SERVICE_ID
+File           https://api.graph.cool/file/v1/SERVICE_ID
+```
+
+Now go to the `js/App.js` file, and change the value of the `serviceId` variable to match the `SERVICE_ID` in the output above.
+
 ## Seeding data
 
-Without data, the application will not display anything, so we need to seed the graph.cool datastore with some data.
+Without data, the application will not display anything, so we need to seed the Graphcool datastore with some data. Some useful starting data has already been exported for just this purpose.
 
 ### Reset existing data
 
-You will want to reset (remove) the existing data first:
+If you have already done this procedure, and modified the data, you may want to reset (remove) the existing data first:
 
 ```
 $ cd server
@@ -28,7 +102,26 @@ $ graphcool reset
 
 Type `y`, and press `<Enter>`.
 
-### Insert new data
+### Restore from previous export
+
+You can now import the data that has been previously exported:
+
+```sh
+$ graphcool import --source export-2018-10-01T16:06:52.855Z.zip
+Unzipping... 22ms
+Validating data... 17ms
+
+Uploading nodes...
+Uploading nodes done 287ms
+
+Uploading lists
+Uploading lists done 211ms
+
+Uploading relations
+Uploading relations done 171ms
+```
+
+### View new data
 
 Start the browser console:
 
@@ -36,224 +129,4 @@ Start the browser console:
 $ graphcool console
 ```
 
-Click the **Playground** button at bottom left of the screen, then enter each GQL mutation listed below.
-
-> **NOTE!**
-> Mutatations must be executed in the order they appear below.
-
-1. Create venues
-
-<details>
-  <summary>
-    Show/hide mutation...
-  </summary>
-
-```graphql
-mutation {
-  createVenue(
-    title: "The Amersham"
-    wideImageUrl: "https://www.fillmurray.com/600/200"
-    headerImageUrl: "https://www.fillmurray.com/600/400"
-    secondaryImageUrls: ["https://www.placecage.com/200/200"]
-    description: "The Amersham Arms makes Timeout's top ten best comedy clubs and nights in the capital"
-    events: []
-    promotions: []
-    address: { city: "London", postcode: "W1A", street: "High Street" }
-  ) {
-    id
-    title
-    wideImageUrl
-    secondaryImageUrls
-    description
-    events {
-      description
-      title
-    }
-    promotions {
-      offer
-    }
-    address {
-      id
-      street
-      postcode
-      city
-    }
-  }
-}
-```
-
-</details>
-
-> Take a note of the `id` of at least one of the venues created above, as it will be used in the next two steps.
-
-2. Create events
-
-<details>
-  <summary>
-    Show/hide mutation...
-  </summary>
-
-```graphql
-mutation {
-  createEvent(
-    title: "Comedy Night"
-    date: "2015-11-22T13:57:31.123Z"
-    wideImageUrl: "https://placekitten.com/600/200"
-    headerImageUrl: "https://placekitten.com/600/400"
-    secondaryImageUrls: [
-      "https://placekitten.com/200/200"
-      "https://placekitten.com/201/201"
-      "https://placekitten.com/202/202"
-    ]
-    description: "Join to see the latest comedy acts from Edinburgh fringe festival"
-    venueId: "__VENUE_ID_FROM_FIRST_STEP__"
-  ) {
-    id
-    title
-    wideImageUrl
-    headerImageUrl
-    secondaryImageUrls
-    description
-    venue {
-      title
-      address {
-        street
-        city
-        postcode
-      }
-    }
-  }
-}
-```
-</details>
-
-3. Create promotions
-
-<details>
-  <summary>
-    Show/hide mutation...
-  </summary>
-
-```graphql
-mutation {
-  createPromotion(
-    offer: "Buy 4 Mojitos - Get 2 free"
-    wideImageUrl: "https://placem.at/things?w=600&h=200"
-    headerImageUrl: "https://placem.at/things?w=600&h=400"
-    scanCodeImageUrl: "https://pbs.twimg.com/media/BesJ0qXCUAA3EJx.png"
-    venueId: "__VENUE_ID_FROM_FIRST_STEP__"
-  ) {
-    id
-    offer
-    wideImageUrl
-    headerImageUrl
-    scanCodeImageUrl
-    venue {
-      title
-    }
-  }
-}
-```
-
-</details>
-
-### Viewing existing data
-
-For convenience, here are some GraphQL queries that allow viewing of existing data.
-
-1. All venues
-
-<details>
-  <summary>
-    Show/hide query...
-  </summary>
-
-```graphql
-query {
-  allVenues {
-    id
-    title
-    wideImageUrl
-    headerImageUrl
-    secondaryImageUrls
-    description
-    events {
-      title
-    }
-    promotions {
-      offer
-    }
-    address {
-      id
-      street
-      city
-      postcode
-    }
-  }
-}
-```
-
-</details>
-
-2. All events
-
-<details>
-  <summary>
-    Show/hide query...
-  </summary>
-
-```graphql
-query {
-  allEvents {
-    id
-    title
-    date
-    wideImageUrl
-    headerImageUrl
-    secondaryImageUrls
-    venue {
-      title
-      address {
-        street
-        city
-        postcode
-      }
-      events {
-        title
-      }
-    }
-  }
-}
-```
-
-</details>
-
-3. All promotions
-
-<details>
-  <summary>
-    Show/hide query...
-  </summary>
-
-```graphql
-query {
-  allPromotions {
-    id
-    offer
-    scanCodeImageUrl
-    wideImageUrl
-    headerImageUrl
-    venue {
-      title
-      description
-      address {
-        street
-        city
-        postcode
-      }
-    }
-  }
-}
-```
-
-</details>
+Below **SCHEMA** near the top left, click the **DATA** button. You can now see the data stored for the schema.
