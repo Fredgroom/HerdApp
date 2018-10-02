@@ -101,13 +101,6 @@ const FeedStack = createStackNavigator(
       title: navigation.state.routeName,
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'Feed',
-      headerBackTitleStyle: {
-        color: colours.blue,
-      },
-      headerTintColor: colours.blue,
-      headerTitleStyle: {
-        color: colours.black,
-      },
     }),
   }
 );

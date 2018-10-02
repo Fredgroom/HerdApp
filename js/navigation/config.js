@@ -14,10 +14,16 @@ const HamburgerIcon = ({ navigation }) => (
 );
 
 export const sharedNavigationOptions = (navigation) => ({
-  headerTintColor: colours.black,
   headerTitleStyle: {
     fontFamily: fonts.regular,
   },
+  headerTitleStyle: {
+    color: colours.black,
+  },
+  headerBackTitleStyle: {
+    color: colours.blue,
+  },
+  headerTintColor: colours.blue,
   ...Platform.select({
     android: {
       headerLeft: <HamburgerIcon navigation={navigation} />,

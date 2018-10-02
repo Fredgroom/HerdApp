@@ -10,10 +10,10 @@ export const styles = StyleSheet.create({
     fontFamily: fonts.regular,
   },
   headingText: {
-    fontSize: height * 0.03,
+    fontSize: 15,
     textAlign: 'center',
     marginHorizontal: width * 0.03,
-    marginVertical: width * 0.01,
+    marginVertical: 10,
     fontFamily: fonts.regular,
   },
   componentTitle: {
