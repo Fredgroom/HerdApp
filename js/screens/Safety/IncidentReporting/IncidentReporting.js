@@ -1,16 +1,28 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import { styles } from './styles';
 
 const IncidentReporting = ({ navigation }) => {
   return (
     <View>
-      <View>
-        <Button
-          onPress={() => navigation.navigate('SendIncidentReport')}
-          title="Link to Send Incident Reporting"
-        />
-      </View>
+      <ImageBackground
+        style={styles.backgroundImage}
+        source={require('../../../assets/images/staticPages/incidentReporting.png')}
+      >
+        <View>
+          <Text
+            style={styles.safetyContainer1}
+            onPress={() => navigation.navigate('Safety')}
+          />
+        </View>
+        <View>
+          <Text
+            style={styles.safetyContainer2}
+            onPress={() => navigation.navigate('Safety')}
+          />
+        </View>
+      </ImageBackground>
     </View>
   );
 };

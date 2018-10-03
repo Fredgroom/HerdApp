@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import Promo from '../../../components/Promo';
 
 const AllPromos = ({ allPromotions }) => {
   return (
-    <View>
-      <View>
-        {allPromotions.map((promotion) => (
-          <Promo key={promotion.id} promoData={promotion} />
-        ))}
-      </View>
-    </View>
+    <ScrollView>
+      {allPromotions.map((promotion) => (
+        <Promo key={promotion.id} promoData={promotion} />
+      ))}
+    </ScrollView>
   );
 };
 
