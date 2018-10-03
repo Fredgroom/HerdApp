@@ -4,7 +4,6 @@ import { createStackNavigator } from 'react-navigation';
 import { colours } from '../config/styles';
 import { styles } from './styles';
 import { sharedNavigationOptions } from './config';
-import { AlertVenueStaffContainer } from '../screens/Safety/AlertVenueStaff';
 import { AllEventsContainer } from '../screens/Feed/AllEvents';
 import { AllPromosContainer } from '../screens/Feed/AllPromos';
 import { AllVenuesContainer } from '../screens/Feed/AllVenues';
@@ -18,7 +17,6 @@ import { LogOutContainer } from '../screens/LogOut';
 import { PromoContainer } from '../screens/Feed/Promo';
 import { SafetyContainer } from '../screens/Safety';
 import { ScanIdContainer } from '../screens/ScanId';
-import { SendIncidentReportContainer } from '../screens/Safety/SendIncidentReport';
 import { TonightContainer } from '../screens/Herd/Tonight';
 import { VenueChatContainer } from '../screens/Safety/VenueChat';
 import { VenueContainer } from '../screens/Feed/Venue';
@@ -136,28 +134,24 @@ const SafetyStack = createStackNavigator(
         title: 'Safety',
       }),
     },
-    AlertVenueStaff: {
-      screen: AlertVenueStaffContainer,
-      navigationOptions: () => ({
-        title: 'Alert Venue Staff',
-      }),
-    },
     IncidentReporting: {
       screen: IncidentReportingContainer,
       navigationOptions: () => ({
         title: 'Incident Reporting',
       }),
     },
-    SendIncidentReport: {
-      screen: SendIncidentReportContainer,
-      navigationOptions: () => ({
-        title: 'Send Incident Report',
-      }),
-    },
     VenueChat: {
       screen: VenueChatContainer,
-      navigationOptions: () => ({
+      navigationOptions: ({ navigation }) => ({
         title: 'Chat',
+        headerRight: (
+          <Text
+            style={styles.headerRight}
+            onPress={() => navigation.navigate('Safety')}
+          >
+            Close Chat
+          </Text>
+        ),
       }),
     },
   },

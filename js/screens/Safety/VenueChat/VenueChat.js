@@ -1,22 +1,22 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View, Text, ImageBackground } from 'react-native';
 import { withNavigation } from 'react-navigation';
+import { styles } from './styles';
 
 const VenueChat = ({ navigation }) => {
   return (
     <View>
-      <View>
-        <Button
-          onPress={() => navigation.navigate('AlertVenueStaff')}
-          title="Close Chat"
-        />
-      </View>
-      <View>
-        <Button
-          onPress={() => navigation.navigate('Safety')}
-          title="Link to Safety Page"
-        />
-      </View>
+      <ImageBackground
+        style={styles.backgroundImage}
+        source={require('../../../assets/images/staticPages/venueChat.png')}
+      >
+        <View>
+          <Text
+            style={styles.safetyContainer}
+            onPress={() => navigation.navigate('Safety')}
+          />
+        </View>
+      </ImageBackground>
     </View>
   );
 };
