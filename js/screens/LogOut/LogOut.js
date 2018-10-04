@@ -1,12 +1,20 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { View, Button, AsyncStorage } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const LogOut = () => {
-  return (
-    <View>
-      <Text>Log Out</Text>
-    </View>
-  );
-};
+class LogOut extends Component {
+  render() {
+    return (
+      <View>
+        <Button title="Sign me out" onPress={this._signOutAsync} />
+      </View>
+    );
+  }
 
-export default LogOut;
+  _signOutAsync = async () => {
+    await AsyncStorage.clear();
+    this.props.navigation.navigate('LogIn');
+  };
+}
+
+export default withNavigation(LogOut);

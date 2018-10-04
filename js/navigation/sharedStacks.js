@@ -13,6 +13,7 @@ import { FeedContainer } from '../screens/Feed';
 import { HerdContainer } from '../screens/Herd';
 import { IdContainer } from '../screens/ScanId/Id';
 import { IncidentReportingContainer } from '../screens/Safety/IncidentReporting';
+import { LogInContainer } from '../screens/LogIn';
 import { LogOutContainer } from '../screens/LogOut';
 import { PromoContainer } from '../screens/Feed/Promo';
 import { SafetyContainer } from '../screens/Safety';
@@ -224,4 +225,20 @@ const LogOutStack = createStackNavigator(
   }
 );
 
-export { FeedStack, ScanIdStack, SafetyStack, HerdStack, LogOutStack };
+const LogInStack = createStackNavigator({
+  LogIn: {
+    screen: LogInContainer,
+    navigationOptions: () => ({
+      title: 'Log In',
+    }),
+  },
+});
+
+export {
+  FeedStack,
+  ScanIdStack,
+  SafetyStack,
+  HerdStack,
+  LogOutStack,
+  LogInStack,
+};

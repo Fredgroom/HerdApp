@@ -1,9 +1,16 @@
-import { createStackNavigator } from 'react-navigation';
+import { createSwitchNavigator } from 'react-navigation';
 import NavigationLayout from './NavigationLayout';
+import { LogInStack } from './sharedStacks';
+import { AuthLoading } from '../screens/AuthLoading';
 
-const RootStack = createStackNavigator(
+const RootStack = createSwitchNavigator(
   {
-    Layout: NavigationLayout,
+    AuthLoading: AuthLoading,
+    LogIn: LogInStack,
+    MainApp: NavigationLayout,
+  },
+  {
+    initialRouteName: 'AuthLoading',
   },
   {
     mode: 'modal',
