@@ -2,10 +2,14 @@ import { StyleSheet, Platform, Dimensions } from 'react-native';
 const { height, width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+  },
   backgroundImage: {
-    height: '100%',
-    width: '100%',
-    resizeMode: 'contain',
+    flex: 1,
+    alignSelf: 'stretch',
   },
   buttonContainer: {
     flexDirection: 'row',

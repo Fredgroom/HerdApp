@@ -5,10 +5,11 @@ import { styles } from './styles';
 
 const CreateHerd = ({ navigation }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ImageBackground
         style={styles.backgroundImage}
-        source={require('../../../assets/images/staticPages/herd3.png')}
+        source={require('../../../assets/images/staticPages/withOverlay/herd3.png')}
+        resizeMode="contain"
       >
         <View style={styles.buttonContainer}>
           <View>

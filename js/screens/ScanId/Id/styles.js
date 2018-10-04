@@ -3,10 +3,14 @@ import { colours } from '../../../config/styles';
 const { height, width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
-  scanIdImage: {
-    height: '100%',
-    width: '100%',
-    resizeMode: 'contain',
+  container: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+  },
+  backgroundImage: {
+    flex: 1,
+    alignSelf: 'stretch',
   },
   scanIdLink: {
     flexDirection: 'row',

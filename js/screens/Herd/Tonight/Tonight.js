@@ -5,10 +5,11 @@ import { styles } from './styles';
 
 const Tonight = ({ navigation }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ImageBackground
         style={styles.backgroundImage}
-        source={require('../../../assets/images/staticPages/herd4.png')}
+        source={require('../../../assets/images/staticPages/withOverlay/herd4.png')}
+        resizeMode="contain"
       >
         <View style={styles.buttonContainer}>
           <View>

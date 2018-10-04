@@ -5,10 +5,11 @@ import { styles } from './styles';
 
 const IncidentReporting = ({ navigation }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ImageBackground
         style={styles.backgroundImage}
-        source={require('../../../assets/images/staticPages/incidentReporting.png')}
+        source={require('../../../assets/images/staticPages/withOverlay/incidentReporting.png')}
+        resizeMode="contain"
       >
         <View>
           <Text

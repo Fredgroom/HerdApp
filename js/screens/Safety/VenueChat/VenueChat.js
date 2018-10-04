@@ -5,10 +5,11 @@ import { styles } from './styles';
 
 const VenueChat = ({ navigation }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ImageBackground
         style={styles.backgroundImage}
-        source={require('../../../assets/images/staticPages/venueChat.png')}
+        source={require('../../../assets/images/staticPages/withOverlay/venueChat.png')}
+        resizeMode="contain"
       >
         <View>
           <Text

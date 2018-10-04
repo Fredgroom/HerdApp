@@ -2,13 +2,14 @@ import { StyleSheet, Platform, Dimensions } from 'react-native';
 const { height, width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
-  backgroundImage: {
-    height: '100%',
-    width: '100%',
-    resizeMode: 'contain',
+  container: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
   },
-  buttonContainer: {
-    flexDirection: 'row',
+  backgroundImage: {
+    flex: 1,
+    alignSelf: 'stretch',
   },
   createHerdContainer: {
     marginLeft: width * 0.36,

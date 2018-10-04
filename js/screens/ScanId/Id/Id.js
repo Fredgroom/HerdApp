@@ -5,10 +5,11 @@ import { withNavigation } from 'react-navigation';
 
 const Id = ({ navigation }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ImageBackground
-        style={styles.scanIdImage}
-        source={require('../../../assets/images/staticPages/id@.png')}
+        style={styles.backgroundImage}
+        source={require('../../../assets/images/staticPages/withOverlay/id.png')}
+        resizeMode="contain"
       >
         <View>
           <Text

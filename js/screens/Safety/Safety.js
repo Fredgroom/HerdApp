@@ -5,10 +5,11 @@ import { withNavigation } from 'react-navigation';
 
 const Safety = ({ navigation }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ImageBackground
-        style={styles.safetyImage}
-        source={require('../../assets/images/staticPages/08_SAFTEY.png')}
+        style={styles.backgroundImage}
+        source={require('../../assets/images/staticPages/withOverlay/08_SAFETY.png')}
+        resizeMode="contain"
       >
         <View>
           <Text

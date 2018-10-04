@@ -3,8 +3,8 @@ import { View, ImageBackground, Text } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
 
-const herdLocationImage = require('../../assets/images/staticPages/herd1.png');
-const personLocationImage = require('../../assets/images/staticPages/herd2.png');
+const herdLocationImage = require('../../assets/images/staticPages/withOverlay/herd1.png');
+const personLocationImage = require('../../assets/images/staticPages/withOverlay/herd2.png');
 
 class Herd extends Component {
   constructor(props) {
@@ -26,28 +26,34 @@ class Herd extends Component {
 
   render() {
     return (
-      <ImageBackground style={styles.backgroundImage} source={this.state.image}>
-        <View style={styles.buttonContainer}>
-          <View>
-            <Text
-              style={styles.createHerdContainer}
-              onPress={() => this.navigation.navigate('CreateHerd')}
-            />
+      <View style={styles.container}>
+        <ImageBackground
+          style={styles.backgroundImage}
+          source={this.state.image}
+          resizeMode="contain"
+        >
+          <View style={styles.buttonContainer}>
+            <View>
+              <Text
+                style={styles.createHerdContainer}
+                onPress={() => this.navigation.navigate('CreateHerd')}
+              />
+            </View>
+            <View>
+              <Text
+                style={styles.tonightContainer}
+                onPress={() => this.navigation.navigate('Tonight')}
+              />
+            </View>
           </View>
           <View>
             <Text
-              style={styles.tonightContainer}
-              onPress={() => this.navigation.navigate('Tonight')}
+              style={styles.jamesContainer}
+              onPress={this.refreshScreen.bind(this)}
             />
           </View>
-        </View>
-        <View>
-          <Text
-            style={styles.jamesContainer}
-            onPress={this.refreshScreen.bind(this)}
-          />
-        </View>
-      </ImageBackground>
+        </ImageBackground>
+      </View>
     );
   }
 }

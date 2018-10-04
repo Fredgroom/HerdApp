@@ -1,9 +1,14 @@
 import { StyleSheet, Platform } from 'react-native';
 
 export const styles = StyleSheet.create({
-  safetyImage: {
-    height: '100%',
-    width: '100%',
+  container: {
+    flex: 1,
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+  },
+  backgroundImage: {
+    flex: 1,
+    alignSelf: 'stretch',
   },
   alertButton: {
     height: '30%',
