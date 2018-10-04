@@ -23,6 +23,6 @@ export const styles = StyleSheet.create({
     }),
     backgroundColor: 'transparent',
     width: width * 0.48,
-    height: height * 0.04,
+    height: height * 0.07,
   },
 });

@@ -11,6 +11,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'stretch',
   },
+  buttonContainer: {
+    flexDirection: 'row',
+  },
   createHerdContainer: {
     marginLeft: width * 0.36,
     ...Platform.select({
@@ -23,7 +26,7 @@ export const styles = StyleSheet.create({
     }),
     backgroundColor: 'transparent',
     width: width * 0.3,
-    height: height * 0.05,
+    height: height * 0.07,
   },
   tonightContainer: {
     marginLeft: width * 0.02,
@@ -32,22 +35,22 @@ export const styles = StyleSheet.create({
         marginTop: '1%',
       },
       android: {
-        marginTop: '3%',
+        marginTop: '5%',
       },
     }),
     width: width * 0.3,
-    height: height * 0.05,
+    height: height * 0.07,
     backgroundColor: 'transparent',
   },
   jamesContainer: {
-    marginLeft: width * 0.02,
-    marginTop: height * 0.07,
+    marginLeft: width * 0.035,
+    marginTop: height * 0.06,
     ...Platform.select({
       ios: {
-        paddingBottom: '10%',
+        paddingBottom: '12%',
       },
       android: {
-        paddingBottom: '10%',
+        paddingBottom: '15%',
       },
     }),
     width: '30%',

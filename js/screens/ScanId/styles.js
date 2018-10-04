@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
   },
   idNavContainer: {
     width: '52%',
-    height: '20%',
+    height: '30%',
     marginLeft: '50%',
     marginTop: '4%',
     flexDirection: 'row',
@@ -20,11 +20,11 @@ export const styles = StyleSheet.create({
     backgroundColor: 'transparent',
   },
   idButton: {
-    height: '6%',
+    height: '15%',
     width: '25%',
     marginLeft: '35%',
     marginRight: '32%',
-    marginTop: '77%',
+    marginTop: '60%',
     backgroundColor: 'transparent',
   },
 });

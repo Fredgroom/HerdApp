@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     marginLeft: '2%',
     marginTop: '3%',
     width: '47%',
-    height: '17%',
+    height: '30%',
     paddingHorizontal: 73,
     backgroundColor: 'transparent',
   },

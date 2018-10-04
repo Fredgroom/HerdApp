@@ -23,23 +23,23 @@ export const styles = StyleSheet.create({
     }),
     backgroundColor: 'transparent',
     width: width * 0.48,
-    height: height * 0.04,
+    height: height * 0.065,
   },
   safetyContainer2: {
     alignSelf: 'flex-end',
     marginRight: width * 0.02,
     ...Platform.select({
       ios: {
-        marginTop: height * 0.59,
+        marginTop: height * 0.55,
         paddingVertical: height * 0.035,
       },
       android: {
-        marginTop: height * 0.63,
+        marginTop: height * 0.6,
         paddingVertical: height * 0.035,
       },
     }),
     backgroundColor: 'transparent',
     width: width * 0.3,
-    height: height * 0.04,
+    height: height * 0.09,
   },
 });

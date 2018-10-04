@@ -26,11 +26,10 @@ export const styles = StyleSheet.create({
     }),
     backgroundColor: 'transparent',
     width: width * 0.3,
-    height: height * 0.04,
+    height: height * 0.065,
   },
   tonightContainer: {
     marginLeft: width * 0.36,
-    backgroundColor: 'red',
     ...Platform.select({
       ios: {
         marginTop: height * 0.005,
@@ -40,7 +39,7 @@ export const styles = StyleSheet.create({
       },
     }),
     width: width * 0.3,
-    height: height * 0.04,
+    height: height * 0.065,
     backgroundColor: 'transparent',
   },
 });

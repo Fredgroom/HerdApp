@@ -14,7 +14,7 @@ const IncidentReporting = ({ navigation }) => {
         <View>
           <Text
             style={styles.safetyContainer1}
-            onPress={() => navigation.navigate('Safety')}
+            onPress={() => navigation.navigate('VenueChat')}
           />
         </View>
         <View>
