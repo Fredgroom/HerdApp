@@ -6,7 +6,7 @@ import {
   ScanIdStack,
   SafetyStack,
   HerdStack,
-  LogOutStack,
+  ProfileStack,
 } from './sharedStacks';
 
 export default createBottomTabNavigator(
@@ -15,7 +15,7 @@ export default createBottomTabNavigator(
     ScanId: { screen: ScanIdStack },
     Safety: { screen: SafetyStack },
     Herd: { screen: HerdStack },
-    LogOut: { screen: LogOutStack },
+    Profile: { screen: ProfileStack },
   },
   {
     navigationOptions: ({ navigation }) => ({
@@ -30,8 +30,8 @@ export default createBottomTabNavigator(
           iconName = `ios-notifications`;
         } else if (routeName === 'Herd') {
           iconName = `ios-contacts`;
-        } else if (routeName === 'LogOut') {
-          iconName = `ios-log-out`;
+        } else if (routeName === 'Profile') {
+          iconName = `ios-person`;
         }
         return <Icon name={iconName} size={25} color={tintColor} />;
       },

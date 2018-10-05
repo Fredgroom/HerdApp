@@ -14,7 +14,7 @@ import { HerdContainer } from '../screens/Herd';
 import { IdContainer } from '../screens/ScanId/Id';
 import { IncidentReportingContainer } from '../screens/Safety/IncidentReporting';
 import { LogInContainer } from '../screens/LogIn';
-import { LogOutContainer } from '../screens/LogOut';
+import { ProfileContainer } from '../screens/Profile';
 import { PromoContainer } from '../screens/Feed/Promo';
 import { SafetyContainer } from '../screens/Safety';
 import { ScanIdContainer } from '../screens/ScanId';
@@ -208,12 +208,12 @@ const HerdStack = createStackNavigator(
   }
 );
 
-const LogOutStack = createStackNavigator(
+const ProfileStack = createStackNavigator(
   {
-    LogOut: {
-      screen: LogOutContainer,
+    Profile: {
+      screen: ProfileContainer,
       navigationOptions: () => ({
-        title: 'Log Out',
+        title: 'Profile',
       }),
     },
   },
@@ -221,7 +221,7 @@ const LogOutStack = createStackNavigator(
     navigationOptions: ({ navigation }) => ({
       title: navigation.state.routeName,
       ...sharedNavigationOptions(navigation),
-      initialRouteName: 'LogOut',
+      initialRouteName: 'Profile ',
     }),
   }
 );
@@ -246,6 +246,6 @@ export {
   ScanIdStack,
   SafetyStack,
   HerdStack,
-  LogOutStack,
   IntroStack,
+  ProfileStack,
 };

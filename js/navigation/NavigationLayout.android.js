@@ -6,7 +6,7 @@ import {
   ScanIdStack,
   SafetyStack,
   HerdStack,
-  LogOutStack,
+  ProfileStack,
 } from './sharedStacks';
 
 const renderIcon = (iconName, tintColor) => (
@@ -29,8 +29,8 @@ HerdStack.navigationOptions = {
   drawerIcon: ({ tintColor }) => renderIcon('md-contacts', tintColor),
 };
 
-LogOutStack.navigationOptions = {
-  drawerIcon: ({ tintColor }) => renderIcon('md-log-out', tintColor),
+ProfileStack.navigationOptions = {
+  drawerIcon: ({ tintColor }) => renderIcon('md-person', tintColor),
 };
 
 export default createDrawerNavigator(
@@ -39,7 +39,7 @@ export default createDrawerNavigator(
     ScanId: ScanIdStack,
     Safety: SafetyStack,
     Herd: HerdStack,
-    LogOut: LogOutStack,
+    Profile: ProfileStack,
   },
   {
     drawerWidth: 200,
