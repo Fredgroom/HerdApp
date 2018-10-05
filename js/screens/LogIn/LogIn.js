@@ -9,7 +9,7 @@ class LogIn extends Component {
       <View style={styles.container}>
         <ImageBackground
           style={styles.backgroundImage}
-          source={require('../../assets/images/staticPages/registration_screen.png')}
+          source={require('../../assets/images/staticPages/withOverlay/registrationScreen.png')}
           resizeMode="contain"
         >
           <View>
