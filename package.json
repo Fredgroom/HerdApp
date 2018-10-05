@@ -17,6 +17,7 @@
     "react": "16.5.0",
     "react-apollo": "2.1.11",
     "react-native": "0.57.0",
+    "react-native-swipe-gestures": "1.0.2",
     "react-native-vector-icons": "5.0.0",
     "react-navigation": "2.14.2"
   },

@@ -1,12 +1,12 @@
 import { createSwitchNavigator } from 'react-navigation';
 import NavigationLayout from './NavigationLayout';
-import { LogInStack } from './sharedStacks';
+import { IntroStack } from './sharedStacks';
 import { AuthLoading } from '../screens/AuthLoading';
 
 const RootStack = createSwitchNavigator(
   {
     AuthLoading: AuthLoading,
-    LogIn: LogInStack,
+    Intro: IntroStack,
     MainApp: NavigationLayout,
   },
   {

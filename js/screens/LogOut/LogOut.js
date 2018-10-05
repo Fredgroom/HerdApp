@@ -13,7 +13,7 @@ class LogOut extends Component {
 
   _signOutAsync = async () => {
     await AsyncStorage.clear();
-    this.props.navigation.navigate('LogIn');
+    this.props.navigation.navigate('Splash');
   };
 }
 

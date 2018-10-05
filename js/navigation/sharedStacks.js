@@ -18,6 +18,7 @@ import { LogOutContainer } from '../screens/LogOut';
 import { PromoContainer } from '../screens/Feed/Promo';
 import { SafetyContainer } from '../screens/Safety';
 import { ScanIdContainer } from '../screens/ScanId';
+import { SplashContainer } from '../screens/Splash';
 import { TonightContainer } from '../screens/Herd/Tonight';
 import { VenueChatContainer } from '../screens/Safety/VenueChat';
 import { VenueContainer } from '../screens/Feed/Venue';
@@ -225,14 +226,20 @@ const LogOutStack = createStackNavigator(
   }
 );
 
-const LogInStack = createStackNavigator({
-  LogIn: {
-    screen: LogInContainer,
-    navigationOptions: () => ({
-      title: 'Log In',
-    }),
+const IntroStack = createStackNavigator(
+  {
+    Splash: SplashContainer,
+    LogIn: LogInContainer,
   },
-});
+  {
+    navigationOptions: ({ navigation }) => ({
+      title: navigation.state.routeName,
+      ...sharedNavigationOptions(navigation),
+      initialRouteName: 'Splash',
+      header: null,
+    }),
+  }
+);
 
 export {
   FeedStack,
@@ -240,5 +247,5 @@ export {
   SafetyStack,
   HerdStack,
   LogOutStack,
-  LogInStack,
+  IntroStack,
 };

@@ -14,7 +14,7 @@ const VenueChat = ({ navigation }) => {
         <View>
           <Text
             style={styles.safetyContainer}
-            onPress={() => navigation.navigate('Safety')}
+            onPress={() => navigation.navigate('IncidentReporting')}
           />
         </View>
       </ImageBackground>
