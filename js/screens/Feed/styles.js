@@ -1,9 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import { fonts } from '../../config/styles';
+import { colours, fonts } from '../../config/styles';
 
 const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colours.pureWhite,
+  },
   feedHeaderText: {
     flexDirection: 'row',
     justifyContent: 'space-between',

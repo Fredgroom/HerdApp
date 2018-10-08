@@ -8,7 +8,7 @@ import {
   HerdStack,
   ProfileStack,
 } from './sharedStacks';
-
+import { colours } from '../config/styles';
 export default createBottomTabNavigator(
   {
     Feed: { screen: FeedStack },
@@ -19,6 +19,11 @@ export default createBottomTabNavigator(
   },
   {
     navigationOptions: ({ navigation }) => ({
+      tabBarOptions: {
+        style: {
+          backgroundColor: colours.offWhite,
+        },
+      },
       tabBarIcon: ({ tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;

@@ -8,6 +8,7 @@ import {
   HerdStack,
   ProfileStack,
 } from './sharedStacks';
+import { colours } from '../config/styles';
 
 const renderIcon = (iconName, tintColor) => (
   <Icon name={iconName} size={25} color={tintColor} />
@@ -43,5 +44,6 @@ export default createDrawerNavigator(
   },
   {
     drawerWidth: 200,
+    drawerBackgroundColor: colours.offWhite,
   }
 );

@@ -1,7 +1,8 @@
 import { Platform } from 'react-native';
 
 export const colours = {
-  white: '#f9f9f9',
+  pureWhite: '#ffffff',
+  offWhite: '#f0f0f0',
   black: '#090909',
   transparentBlack: 'rgba(9,9,9,0.6)',
   blue: '#0080ff',

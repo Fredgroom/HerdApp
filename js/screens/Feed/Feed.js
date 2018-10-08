@@ -9,7 +9,7 @@ import Venue from '../../components/Venue';
 
 const Feed = ({ navigation, promoData, eventData, venueData }) => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <Text style={styles.headingText}>
         Your guide to all local events and promotions at venues near you.
       </Text>
