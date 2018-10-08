@@ -1,5 +1,4 @@
-import { StyleSheet, Platform, Dimensions } from 'react-native';
-const { height, width } = Dimensions.get('window');
+import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   backgroundContainer: {
@@ -7,8 +6,22 @@ export const styles = StyleSheet.create({
     alignSelf: 'stretch',
     backgroundColor: '#fff',
   },
-  backgroundImage: {
+  wrapper: {
+    backgroundColor: '#FFF',
+  },
+  slide: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  lastSlide: {
     flex: 1,
     alignSelf: 'stretch',
+    backgroundColor: '#fff',
+  },
+  lastSlideImage: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
