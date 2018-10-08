@@ -6,6 +6,7 @@ import GestureRecognizer, {
 } from 'react-native-swipe-gestures';
 import { withNavigation } from 'react-navigation';
 import { styles } from './styles';
+import { colours } from '../../config/styles';
 
 class Splash extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class Splash extends Component {
       <Swiper
         style={styles.wrapper}
         stack
-        showsPagination={false}
+        activeDotColor={colours.blue}
         loop={false}
         swipeDirection={'left'}
         bounces={true}

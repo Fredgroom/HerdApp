@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native';
+import { colours } from '../../config/styles';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: '#fff',
+    backgroundColor: colours.pureWhite,
   },
   wrapper: {
-    backgroundColor: '#FFF',
+    backgroundColor: colours.pureWhite,
   },
   slide: {
     flex: 1,
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
   lastSlide: {
     flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: '#fff',
+    backgroundColor: colours.pureWhite,
   },
   lastSlideImage: {
     flex: 1,

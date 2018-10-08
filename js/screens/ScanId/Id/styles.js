@@ -1,12 +1,13 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { colours } from '../../../config/styles';
+
 const { height, width } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignSelf: 'stretch',
-    backgroundColor: '#fff',
+    backgroundColor: colours.pureWhite,
   },
   backgroundImage: {
     flex: 1,
