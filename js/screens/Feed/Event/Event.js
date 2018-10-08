@@ -6,7 +6,7 @@ import { styles } from './styles';
 
 const Event = ({ eventData, navigation }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <ImageBackground
         style={styles.headerImage}
         source={{ uri: eventData.headerImageUrl }}

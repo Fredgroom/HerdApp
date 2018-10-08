@@ -5,13 +5,13 @@ const { height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   title: {
-    color: colours.white,
+    color: colours.offWhite,
     fontFamily: fonts.regular,
     marginVertical: 1,
     alignSelf: 'flex-start',
   },
   offer: {
-    color: colours.white,
+    color: colours.offWhite,
     fontFamily: fonts.bold,
     alignSelf: 'flex-start',
   },

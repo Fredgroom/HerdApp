@@ -8,7 +8,7 @@ import { styles } from './styles';
 const Promo = ({ promoData }) => {
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
-      <View style={styles.promoContainer}>
+      <View style={styles.container}>
         <ImageBackground
           style={styles.headerImage}
           source={{ uri: promoData.headerImageUrl }}

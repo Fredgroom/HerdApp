@@ -6,7 +6,7 @@ import { styles } from './styles';
 
 const Venue = ({ venueData, navigation }) => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <ImageBackground
         style={styles.headerImage}
         source={{ uri: venueData.headerImageUrl }}

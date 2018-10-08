@@ -4,9 +4,10 @@ import { colours, fonts } from '../../../config/styles';
 const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
-  promoContainer: {
+  container: {
     alignItems: 'center',
     paddingVertical: 10,
+    backgroundColor: colours.pureWhite,
   },
   backgroundColor: {
     alignSelf: 'flex-start',
@@ -17,13 +18,13 @@ export const styles = StyleSheet.create({
     marginTop: 0,
   },
   offer: {
-    color: colours.white,
+    color: colours.offWhite,
     fontFamily: fonts.bold,
     alignSelf: 'flex-start',
     paddingHorizontal: height * 0.0045,
   },
   title: {
-    color: colours.white,
+    color: colours.offWhite,
     fontFamily: fonts.regular,
     marginVertical: 1,
     alignSelf: 'flex-start',

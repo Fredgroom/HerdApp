@@ -6,7 +6,7 @@ const { height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   title: {
-    color: colours.white,
+    color: colours.offWhite,
     backgroundColor: colours.transparentBlack,
     alignSelf: 'flex-start',
     padding: 3,
@@ -14,7 +14,7 @@ export const styles = StyleSheet.create({
     fontFamily: fonts.bold,
   },
   address: {
-    color: colours.white,
+    color: colours.offWhite,
     backgroundColor: colours.transparentBlack,
     marginVertical: 1,
     padding: 3,

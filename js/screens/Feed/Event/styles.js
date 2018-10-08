@@ -5,12 +5,15 @@ import { fonts } from '../../../config/styles';
 const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colours.pureWhite,
+  },
   title: {
-    color: colours.white,
+    color: colours.offWhite,
     fontFamily: fonts.regular,
   },
   secondHeading: {
-    color: colours.white,
+    color: colours.offWhite,
     fontFamily: fonts.bold,
   },
   titleContainer: {

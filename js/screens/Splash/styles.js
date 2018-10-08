@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  backgroundContainer: {
+  container: {
     flex: 1,
     alignSelf: 'stretch',
     backgroundColor: '#fff',

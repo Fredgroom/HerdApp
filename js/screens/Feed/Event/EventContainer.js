@@ -36,7 +36,7 @@ class EventContainer extends Component {
           }
           const promoData = data.allPromotions[0];
           return (
-            <ScrollView>
+            <ScrollView style={styles.container}>
               <Event eventData={eventData} />
               <Promo style={styles.wideImage} promoData={promoData} />
             </ScrollView>

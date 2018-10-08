@@ -5,7 +5,7 @@ const { width, height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   title: {
-    color: colours.white,
+    color: colours.offWhite,
     fontFamily: fonts.regular,
   },
   titleContainer: {
@@ -35,5 +35,8 @@ export const styles = StyleSheet.create({
     marginVertical: height * 0.025,
     padding: 2,
     fontFamily: fonts.regular,
+  },
+  container: {
+    backgroundColor: colours.pureWhite,
   },
 });

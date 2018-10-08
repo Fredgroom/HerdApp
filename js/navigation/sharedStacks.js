@@ -101,6 +101,7 @@ const FeedStack = createStackNavigator(
       title: navigation.state.routeName,
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'Feed',
+      headerStyle: styles.header,
     }),
   }
 );
@@ -124,6 +125,7 @@ const ScanIdStack = createStackNavigator(
     navigationOptions: ({ navigation }) => ({
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'ScanId',
+      headerStyle: styles.header,
     }),
   }
 );
@@ -162,6 +164,7 @@ const SafetyStack = createStackNavigator(
       title: navigation.state.routeName,
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'Safety',
+      headerStyle: styles.header,
     }),
   }
 );
@@ -204,6 +207,7 @@ const HerdStack = createStackNavigator(
       title: navigation.state.routeName,
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'Herd',
+      headerStyle: styles.header,
     }),
   }
 );
@@ -222,6 +226,7 @@ const ProfileStack = createStackNavigator(
       title: navigation.state.routeName,
       ...sharedNavigationOptions(navigation),
       initialRouteName: 'Profile ',
+      headerStyle: styles.header,
     }),
   }
 );

@@ -6,19 +6,19 @@ const { height } = Dimensions.get('window');
 
 export const styles = StyleSheet.create({
   title: {
-    color: colours.white,
+    color: colours.offWhite,
     alignSelf: 'flex-start',
     padding: 3,
     paddingBottom: 3,
     fontFamily: fonts.bold,
   },
   subHeading: {
-    color: colours.white,
+    color: colours.offWhite,
     textAlign: 'right',
     fontFamily: fonts.regular,
   },
   address: {
-    color: colours.white,
+    color: colours.offWhite,
     backgroundColor: colours.transparentBlack,
     marginVertical: 1,
     padding: 3,
@@ -34,13 +34,13 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   month: {
-    color: colours.white,
+    color: colours.offWhite,
     fontSize: 12,
     textAlign: 'center',
     fontFamily: fonts.regular,
   },
   day: {
-    color: colours.white,
+    color: colours.offWhite,
     fontSize: 18,
     textAlign: 'center',
     fontFamily: fonts.bold,
