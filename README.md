@@ -16,7 +16,7 @@ The project deliverables are documented in [DELIVERABLES.md](./DELIVERABLES.md).
 
 ### Environment
 
-The Development enviroment can be reproduced following these steps: [DEVELOPMENT.md](./docs/DEVELOPMENT.md).
+The Development enviroment can be reproduced following these steps: [DEVELOPMENT.md](./DEVELOPMENT.md).
 
 ### GraphQL
 
